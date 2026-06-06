@@ -130,35 +130,6 @@ Final Result
 
 ---
 
-## 📂 Project Structure
-
-```text
-PhishShield-AI/
-│── backend/
-│   ├── app.py
-│   ├── models/
-│   ├── utils/
-│
-│── frontend/
-│   ├── index.html
-│   ├── style.css
-│   ├── script.js
-│
-│── extension/
-│   ├── manifest.json
-│   ├── popup.html
-│   ├── popup.js
-│
-│── datasets/
-│
-│── notebooks/
-│
-│── requirements.txt
-│── README.md
-```
-
----
-
 ## ⚙️ Installation
 
 ### 1. Clone the repository
@@ -307,11 +278,11 @@ Output:
 
 ## 🤝 Contributors
 
-- Aliva Indu (https://github.com/AlivaIndu)
-- Aashutosh Kumar Singh (https://github.com/aashutoshkumarsingh)
-- Ananya Shreya (https://github.com/ananyashreya21)
-- Raj Kamal (https://github.com/Rajkamal007264)
-- Akshay Kashyap (https://github.com/akshaykashyap3010)
+- [Aliva Indu](https://github.com/AlivaIndu)
+- [Aashutosh Kumar Singh](https://github.com/aashutoshkumarsingh)
+- [Ananya Shreya](https://github.com/ananyashreya21)
+- [Raj Kamal](https://github.com/Rajkamal007264)
+- [Akshay Kashyap](https://github.com/akshaykashyap3010)
 
 ---
 
