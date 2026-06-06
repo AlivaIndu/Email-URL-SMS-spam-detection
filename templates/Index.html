@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phishing Detector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <nav class="fixed top-0 left-0 w-full z-50 border-b border-[#112433] backdrop-blur-md bg-gradient-to-r from-[#050816] via-[#1a102b] to-[#2a0f1f]">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
+            <a href="#" class="flex items-center gap-2">
+                <i class="fa-solid fa-user-shield text-pink-400 text-2xl"></i>
+
+                <span class="text-2xl font-bold text-pink-500 tracking-wide">
+                    PhishShield AI
+                </span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-10">
+                <a href="#home" class="text-white text-sm font-medium hover:text-pink-400 transition" data-translate="home">
+                    Home
+                </a>
+                <a href="#learn" class="text-white text-sm font-medium hover:text-pink-400 transition" data-translate="learn">
+                    Learn and protect yoursef
+                </a>
+                <a href="#features" class="text-white text-sm font-medium hover:text-pink-400 transition" data-translate="features">
+                    Features
+                </a>
+                <a href="#work" class="text-white text-sm font-medium hover:text-pink-400 transition" data-translate="howWorks">
+                    How It Works
+                </a>
+                <a href="#about" class="text-white text-sm font-medium hover:text-pink-400 transition" data-translate="about">
+                    About
+                </a>
+                <select id="languageSelect" class="text-white text-sm font-medium">
+                    <option value="en" class="text-black">English</option>
+                    <option value="bn" class="text-black">বাংলা</option>
+                    <option value="hi" class="text-black">हिन्दी</option>
+                </select>
+                <a href="#scan"
+                    class="border border-pink-500 text-white px-5 py-2 rounded-xl text-sm font-medium hover:bg-pink-500 hover:text-black transition duration-300" data-translate="startScanning">
+                    Start Scanning
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="min-h-screen bg-gradient-to-b from-[#03040a] via-[#070711] to-[#0b0613]" id="home">
+        <div class="grid max-w-screen-xl px-6 py-24 mx-auto lg:gap-12 xl:gap-0 lg:py-32 lg:grid-cols-12 items-center">
+            <div class="mr-auto place-self-center lg:col-span-7">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full 
+                bg-pink-500/10 border border-pink-500/20 text-pink-400 text-sm font-medium">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span data-translate="heroTag">
+                        AI-Powered Cybersecurity Protection
+                    </span>
+                </div>
+                <h1 class="max-w-2xl mb-6 text-5xl font-extrabold tracking-tight leading-tight md:text-6xl xl:text-7xl text-white">
+                    <span data-translate="heroTitle">
+                    Detect Phishing 
+                    </span>
+                    <span data-translate="heroInstantly" class="bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+                        Instantly
+                    </span>
+                </h1>
+                <p class="max-w-2xl mb-8 text-gray-400 md:text-lg lg:text-xl leading-relaxed">
+                    <span class="md:text-xl lg:text-2xl text-pink-400 font-bold">PhishShield AI</span> 
+                    <span data-translate="heroDesc">
+                    uses advanced AI to analyze suspicious emails, URLs, and websites 
+                    in real time — helping users identify phishing attacks before they become threats.
+                    </span>
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#scan"
+                    data-translate="analyzeLink"
+                    class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white rounded-xl
+                    bg-gradient-to-r from-pink-500 to-purple-600
+                    hover:scale-105 transition duration-300
+                    shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+                        Analyze Link
+                        <svg class="w-5 h-5 ml-2"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="#learn"
+                    data-translate="learnPhishing"
+                    class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white
+                    border border-white/10 rounded-xl bg-white/5 hover:bg-white/10 transition">
+                        Learn About Phishing
+                    </a>
+                </div>
+            </div>
+            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex justify-center">
+                <img src="{{ url_for('static', filename='images/img.png') }}"
+                alt="Cybersecurity Illustration"
+                class="w-full max-w-lg drop-shadow-[0_0_40px_rgba(168,85,247,0.25)]">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gradient-to-b from-[#0b0613] via-[#141021] to-[#1a1228]" id="learn">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Heading -->
+            <div class="text-center max-w-3xl mx-auto">
+
+                <span data-translate="stayAware" class="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                bg-pink-500/10 border border-pink-500/20
+                text-pink-400 text-sm font-semibold tracking-wide">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    Stay Aware. Stay Protected.
+
+                </span>
+
+                <h2 data-translate="learnHowTo" class="mt-6 text-5xl font-extrabold text-white leading-tight">
+
+                    Learn How To
+                    <span data-translate="identifyPhishing" class="bg-gradient-to-r from-pink-400 to-purple-500 
+                    bg-clip-text text-transparent">
+                        Identify Phishing Attacks
+                    </span>
+
+                </h2>
+
+                <p data-translate="learnDesc" class="mt-6 text-lg text-gray-400 leading-relaxed">
+
+                    Cybercriminals use fake emails, websites, SMS messages,
+                    and social engineering tricks to steal passwords,
+                    banking details, and personal information.
+                    Understanding phishing is the first step toward staying safe online.
+
+                </p>
+
+            </div>
+
+            <!-- Info Cards -->
+            <div class="grid gap-8 mt-20 md:grid-cols-2 lg:grid-cols-3">
+
+                <!-- Card 1 -->
+                <div class="group relative p-8 rounded-3xl border border-white/10
+                bg-white/5 backdrop-blur-xl overflow-hidden
+                hover:border-pink-500/40 transition duration-300">
+
+                    <div class="absolute inset-0 bg-pink-500/5 opacity-0
+                    group-hover:opacity-100 blur-3xl transition duration-300"></div>
+
+                    <div class="relative z-10">
+
+                        <div class="w-16 h-16 rounded-2xl
+                        bg-gradient-to-r from-pink-500 to-purple-600
+                        flex items-center justify-center
+                        shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+
+                            <i class="fa-solid fa-envelope-open-text text-white text-2xl"></i>
+
+                        </div>
+
+                        <h3 data-translate="fakeEmails" class="mt-6 text-2xl font-bold text-white">
+                            Fake Emails
+                        </h3>
+
+                        <p data-translate="fakeEmailsDesc" class="mt-4 text-gray-400 leading-relaxed">
+
+                            Attackers often impersonate banks, companies,
+                            or trusted services to trick users into clicking
+                            malicious links or sharing sensitive information.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative p-8 rounded-3xl border border-white/10
+                bg-white/5 backdrop-blur-xl overflow-hidden
+                hover:border-purple-500/40 transition duration-300">
+
+                    <div class="absolute inset-0 bg-purple-500/5 opacity-0
+                    group-hover:opacity-100 blur-3xl transition duration-300"></div>
+
+                    <div class="relative z-10">
+
+                        <div class="w-16 h-16 rounded-2xl
+                        bg-gradient-to-r from-purple-500 to-pink-500
+                        flex items-center justify-center
+                        shadow-[0_0_25px_rgba(168,85,247,0.35)]">
+
+                            <i class="fa-solid fa-link text-white text-2xl"></i>
+
+                        </div>
+
+                        <h3 data-translate="suspiciousLinks" class="mt-6 text-2xl font-bold text-white">
+                            Suspicious Links
+                        </h3>
+
+                        <p data-translate="suspiciousLinksDesc" class="mt-4 text-gray-400 leading-relaxed">
+
+                            Phishing websites may look legitimate but contain
+                            fake URLs designed to steal login credentials,
+                            payment details, or personal data.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative p-8 rounded-3xl border border-white/10
+                bg-white/5 backdrop-blur-xl overflow-hidden
+                hover:border-pink-500/40 transition duration-300">
+
+                    <div class="absolute inset-0 bg-pink-500/5 opacity-0
+                    group-hover:opacity-100 blur-3xl transition duration-300"></div>
+
+                    <div class="relative z-10">
+
+                        <div class="w-16 h-16 rounded-2xl
+                        bg-gradient-to-r from-pink-500 to-purple-600
+                        flex items-center justify-center
+                        shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+
+                            <i class="fa-solid fa-mobile-screen-button text-white text-2xl"></i>
+
+                        </div>
+
+                        <h3 data-translate="smsScams" class="mt-6 text-2xl font-bold text-white">
+                            SMS Scams
+                        </h3>
+
+                        <p data-translate="smsScamsDesc" class="mt-4 text-gray-400 leading-relaxed">
+
+                            Fraudulent SMS messages often create urgency,
+                            asking users to click dangerous links or verify
+                            sensitive account information immediately.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Awareness Tips -->
+            <div class="mt-20 rounded-3xl border border-pink-500/20
+            bg-gradient-to-r from-pink-500/10 to-purple-500/10
+            backdrop-blur-xl p-10">
+
+                <div class="flex items-start gap-5">
+
+                    <div class="w-16 h-16 rounded-2xl
+                    bg-gradient-to-r from-pink-500 to-purple-600
+                    flex items-center justify-center
+                    shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+
+                        <i class="fa-solid fa-shield-halved text-white text-2xl"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3 data-translate="staySafe" class="text-3xl font-bold text-white">
+                            How To Stay Safe
+                        </h3>
+
+                        <div class="grid md:grid-cols-2 gap-6 mt-8">
+
+                            <div class="flex gap-4">
+
+                                <i class="fa-solid fa-circle-check text-pink-400 mt-1"></i>
+
+                                <p data-translate="tip1" class="text-gray-300 leading-relaxed">
+                                    Always verify URLs before entering passwords or personal information.
+                                </p>
+
+                            </div>
+
+                            <div class="flex gap-4">
+
+                                <i class="fa-solid fa-circle-check text-pink-400 mt-1"></i>
+
+                                <p data-translate="tip2" class="text-gray-300 leading-relaxed">
+                                    Avoid clicking suspicious links from unknown emails or SMS messages.
+                                </p>
+
+                            </div>
+
+                            <div class="flex gap-4">
+
+                                <i class="fa-solid fa-circle-check text-pink-400 mt-1"></i>
+
+                                <p data-translate="tip3" class="text-gray-300 leading-relaxed">
+                                    Check for spelling mistakes, urgent language, and fake domains.
+                                </p>
+
+                            </div>
+
+                            <div class="flex gap-4">
+
+                                <i class="fa-solid fa-circle-check text-pink-400 mt-1"></i>
+
+                                <p data-translate="tip4" class="text-gray-300 leading-relaxed">
+                                    Use phishing detection tools before trusting suspicious content.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="py-24 bg-gradient-to-b from-[#0b0613] via-[#141021] to-[#1a1228]" id="features">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+
+            <h2 class="mt-4 text-4xl md:text-5xl font-extrabold text-white">
+                <span data-translate="smartFeatures">
+                    Smart Features For
+                </span>
+                <span data-translate="phishingDetection" class="bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+                    Phishing Detection
+                </span>
+            </h2>
+
+            <p data-translate="featuresDesc" class="mt-5 max-w-2xl mx-auto text-gray-400 text-lg">
+                <span class="md:text-lg lg:text-xl text-pink-400 font-bold">PhishShield AI</span> combines AI-powered threat analysis with real-time protection
+                to keep users safe from phishing attacks and malicious websites.
+            </p>
+
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div class="group relative p-8 rounded-3xl border border-pink-500/10
+            bg-white/5 backdrop-blur-lg overflow-hidden
+            hover:border-pink-500/40 transition duration-300">
+
+                <div class="absolute inset-0 bg-pink-500/5 opacity-0 
+                group-hover:opacity-100 blur-2xl transition duration-300"></div>
+                <div class="relative z-10">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center
+                    bg-gradient-to-r from-pink-500 to-purple-600
+                    shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+                        <i class="fa-solid fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 data-translate="aiThreatAnalysis" class="mt-6 text-2xl font-bold text-white">
+                        AI Threat Analysis
+                    </h3>
+                    <p data-translate="aiThreatAnalysisDesc" class="mt-4 text-gray-400 leading-relaxed">
+                        Advanced machine learning models analyze suspicious URLs,
+                        emails, and domains to detect phishing attempts instantly.
+                    </p>
+                </div>
+            </div>
+            <div class="group relative p-8 rounded-3xl border border-purple-500/10
+            bg-white/5 backdrop-blur-lg overflow-hidden
+            hover:border-purple-500/40 transition duration-300">
+                <div class="absolute inset-0 bg-purple-500/5 opacity-0
+                group-hover:opacity-100 blur-2xl transition duration-300"></div>
+                <div class="relative z-10">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center
+                    bg-gradient-to-r from-purple-500 to-pink-500
+                    shadow-[0_0_25px_rgba(168,85,247,0.35)]">
+                        <i class="fa-solid fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 data-translate="realTimeDetection" class="mt-6 text-2xl font-bold text-white">
+                        Real-Time Detection
+                    </h3>
+                    <p data-translate="realTimeDetectionDesc" class="mt-4 text-gray-400 leading-relaxed">
+                        Instantly scan websites and suspicious links with fast,
+                        accurate results powered by intelligent detection engines.
+                    </p>
+                </div>
+            </div>
+            <div class="group relative p-8 rounded-3xl border border-pink-500/10
+            bg-white/5 backdrop-blur-lg overflow-hidden
+            hover:border-pink-500/40 transition duration-300">
+                <div class="absolute inset-0 bg-pink-500/5 opacity-0
+                group-hover:opacity-100 blur-2xl transition duration-300"></div>
+                <div class="relative z-10">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center
+                    bg-gradient-to-r from-pink-500 to-purple-600
+                    shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+                        <i class="fa-solid fa-user-shield text-white text-2xl"></i>
+                    </div>
+                    <h3 data-translate="privacyProtection" class="mt-6 text-2xl font-bold text-white">
+                        Privacy Protection
+                    </h3>
+                    <p data-translate="privacyProtectionDesc" class="mt-4 text-gray-400 leading-relaxed">
+                        Your scanned data remains secure and protected with encrypted
+                        processing and privacy-focused security measures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gradient-to-b from-[#03040a] via-[#070711] to-[#0b0613]" id="work">
+
+        <!-- Heading -->
+        <div class="max-w-7xl mx-auto px-6 text-center">
+
+            <span data-translate="intelligentDetection" class="text-pink-400 text-sm font-semibold tracking-widest uppercase">
+                Intelligent Detection Process
+            </span>
+
+            <h2 class="mt-4 text-4xl md:text-5xl font-extrabold text-white">
+                <span data-translate="how">
+                    how
+                </span>
+                <span class="bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+                    PhishShield AI
+                </span>
+                <span data-translate="works">
+                    Works
+                </span>
+            </h2>
+
+            <p data-translate="workDesc" class="mt-5 max-w-2xl mx-auto text-gray-400 text-lg">
+                Analyze suspicious URLs, emails, SMS messages, and screenshots
+                using AI-powered phishing detection technology.
+            </p>
+
+        </div>
+
+        <!-- Content -->
+        <div class="max-w-7xl mx-auto px-6 mt-20 grid lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Left Illustration -->
+            <div class="relative">
+
+                <!-- Glow -->
+                <div class="absolute inset-0 bg-pink-500/10 blur-3xl rounded-full"></div>
+
+                <!-- Image Container -->
+                <div class="relative rounded-3xl overflow-hidden border border-white/10
+                bg-white/5 backdrop-blur-lg p-6">
+
+                    <img src="{{ url_for('static', filename='images/img2.png') }}"
+                    alt="Phishing Detection Illustration"
+                    class="w-full rounded-2xl">
+
+                </div>
+
+            </div>
+
+            <!-- Right Steps -->
+            <div class="space-y-10">
+
+                <!-- Step 1 -->
+                <div class="flex gap-6 group">
+
+                    <div class="min-w-[60px] h-[60px] rounded-2xl
+                    bg-gradient-to-r from-pink-500 to-purple-600
+                    flex items-center justify-center
+                    text-white text-xl font-bold
+                    shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+
+                        1
+
+                    </div>
+
+                    <div>
+
+                        <h3 data-translate="step1Title" class="text-2xl font-bold text-white">
+                            Submit Suspicious Content
+                        </h3>
+
+                        <p data-translate="step1Desc" class="mt-3 text-gray-400 leading-relaxed">
+                            Paste a URL, upload a screenshot, enter SMS text,
+                            or provide suspicious email content for analysis.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex gap-6 group">
+
+                    <div class="min-w-[60px] h-[60px] rounded-2xl
+                    bg-white/5 border border-purple-500/30
+                    flex items-center justify-center
+                    text-pink-400 text-xl font-bold">
+
+                        2
+
+                    </div>
+
+                    <div>
+
+                        <h3 data-translate="step2Title" class="text-2xl font-bold text-white">
+                            AI Threat Analysis
+                        </h3>
+
+                        <p data-translate="step2Desc" class="mt-3 text-gray-400 leading-relaxed">
+                            Our intelligent detection engine scans for phishing
+                            indicators, malicious patterns, fake domains,
+                            and social engineering techniques.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex gap-6 group">
+
+                    <div class="min-w-[60px] h-[60px] rounded-2xl
+                    bg-white/5 border border-pink-500/30
+                    flex items-center justify-center
+                    text-pink-400 text-xl font-bold">
+
+                        3
+
+                    </div>
+
+                    <div>
+
+                        <h3 data-translate="step3Title" class="text-2xl font-bold text-white">
+                            Get Security Results
+                        </h3>
+
+                        <p data-translate="step3Desc" class="mt-3 text-gray-400 leading-relaxed">
+                            Receive instant phishing risk scores, detailed
+                            threat insights, and recommendations to stay protected.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="py-24 bg-gradient-to-b from-[#0b0613] via-[#141021] to-[#1a1228]" id="scan">
+
+        <!-- Heading -->
+        <div class="max-w-7xl mx-auto px-6 text-center">
+
+            <span data-translate="aiDetectionModules" class="text-pink-400 text-sm font-semibold tracking-widest uppercase">
+                AI Detection Modules
+            </span>
+
+            <h2 class="mt-4 text-4xl md:text-5xl font-extrabold text-white">
+                <span data-translate="scanMultiple">
+                    Scan Multiple
+                </span>
+                <span data-translate="threatSources" class="bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+                    Threat Sources
+                </span>
+            </h2>
+
+            <p data-translate="scanDesc" class="mt-5 max-w-2xl mx-auto text-gray-400 text-lg">
+                Analyze suspicious emails, URLs, SMS messages, and screenshots
+                using advanced AI-powered phishing detection.
+            </p>
+
+        </div>
+
+        <!-- Cards -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 grid gap-8 lg:grid-cols-4">
+
+            <!-- TEXT ANALYSIS -->
+            <!-- SMS ANALYSIS -->
+            <div class="relative group rounded-3xl border border-white/10
+            bg-white/5 backdrop-blur-xl p-8 overflow-hidden
+            hover:border-pink-500/40 transition duration-300">
+
+                <div class="absolute inset-0 bg-pink-500/5 opacity-0
+                group-hover:opacity-100 blur-3xl transition duration-300"></div>
+
+                <div class="relative z-10">
+
+                    <div class="w-16 h-16 rounded-2xl
+                    bg-gradient-to-r from-pink-500 to-purple-600
+                    flex items-center justify-center
+                    shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+
+                        <i class="fa-solid fa-comment-sms text-white text-2xl"></i>
+
+                    </div>
+
+                    <h3 data-translate="SmsTitle" class="mt-6 text-2xl font-bold text-white">
+                        SMS Analysis
+                    </h3>
+
+                    <p data-translate="SmsDesc" class="mt-3 text-gray-400 leading-relaxed">
+                        Detect phishing and spam SMS messages using AI-powered NLP analysis.
+                    </p>
+
+                    <textarea
+                    id="smsInput"
+                    class="w-full mt-6 h-36 rounded-2xl border border-white/10
+                    bg-black/20 text-white placeholder-gray-500
+                    p-4 outline-none focus:border-pink-500 resize-none"
+                    placeholder="Paste suspicious SMS content here..."></textarea>
+
+                    <button
+                    data-translate="analyzeSms"
+                    id="smsAnalyzeBtn"
+                    class="w-full mt-5 py-3 rounded-2xl
+                    bg-gradient-to-r from-pink-500 to-purple-600
+                    text-white font-semibold
+                    hover:scale-[1.02] transition duration-300
+                    shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+
+                        Analyze SMS
+
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- EMAIL ANALYSIS -->
+            <div class="relative group rounded-3xl border border-white/10
+            bg-white/5 backdrop-blur-xl p-8 overflow-hidden
+            hover:border-purple-500/40 transition duration-300">
+
+                <div class="absolute inset-0 bg-purple-500/5 opacity-0
+                group-hover:opacity-100 blur-3xl transition duration-300"></div>
+
+                <div class="relative z-10">
+
+                    <div class="w-16 h-16 rounded-2xl
+                    bg-gradient-to-r from-purple-500 to-pink-500
+                    flex items-center justify-center
+                    shadow-[0_0_25px_rgba(168,85,247,0.35)]">
+
+                        <i class="fa-solid fa-envelope text-white text-2xl"></i>
+
+                    </div>
+
+                    <h3 data-translate="emailTitle" class="mt-6 text-2xl font-bold text-white">
+                        Email Analysis
+                    </h3>
+
+                    <p data-translate="emailDesc" class="mt-3 text-gray-400 leading-relaxed">
+                        Detect phishing emails and suspicious email content using NLP analysis.
+                    </p>
+
+                    <textarea
+                    id="emailInput"
+                    class="w-full mt-6 h-36 rounded-2xl border border-white/10
+                    bg-black/20 text-white placeholder-gray-500
+                    p-4 outline-none focus:border-pink-500 resize-none"
+                    placeholder="Paste suspicious email content here..."></textarea>
+
+                    <button
+                    data-translate="analyzeEmail"
+                    id="emailAnalyzeBtn"
+                    class="w-full mt-5 py-3 rounded-2xl
+                    bg-gradient-to-r from-pink-500 to-purple-600
+                    text-white font-semibold
+                    hover:scale-[1.02] transition duration-300
+                    shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+
+                        Analyze Email
+
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- URL ANALYSIS -->
+            <div class="relative group rounded-3xl border border-white/10
+            bg-white/5 backdrop-blur-xl p-8 overflow-hidden
+            hover:border-purple-500/40 transition duration-300">
+
+                <div class="absolute inset-0 bg-purple-500/5 opacity-0
+                group-hover:opacity-100 blur-3xl transition duration-300"></div>
+
+                <div class="relative z-10">
+
+                    <!-- Icon -->
+                    <div class="w-16 h-16 rounded-2xl
+                    bg-gradient-to-r from-purple-500 to-pink-500
+                    flex items-center justify-center
+                    shadow-[0_0_25px_rgba(168,85,247,0.35)]">
+
+                        <i class="fa-solid fa-link text-white text-2xl"></i>
+
+                    </div>
+
+                    <!-- Title -->
+                    <h3 data-translate="urlTitle" class="mt-6 text-2xl font-bold text-white">
+                        URL Analysis
+                    </h3>
+
+                    <!-- Description -->
+                    <p  data-translate="urlDesc" class="mt-3 text-gray-400 leading-relaxed">
+                        Detect fake websites, malicious domains,
+                        and suspicious phishing URLs in real time.
+                    </p>
+
+                    <!-- Input -->
+                    <input 
+                    id="urlInput"
+                    type="text"
+                    placeholder="https://suspicious-site.com/login"
+                    class="w-full mt-6 rounded-2xl border border-white/10
+                    bg-black/20 text-white placeholder-gray-500
+                    p-4 outline-none focus:border-pink-500">
+
+                    <button
+                        data-translate="analyzeUrl"
+                        id="urlanalyzeBtn"
+                        class="w-full mt-5 py-3 rounded-2xl
+                    bg-gradient-to-r from-pink-500 to-purple-600
+                    text-white font-semibold
+                    hover:scale-[1.02] transition duration-300
+                    shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+                            Analyze URL
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- IMAGE ANALYSIS -->
+            <div class="relative group rounded-3xl border border-white/10
+            bg-white/5 backdrop-blur-xl p-8 overflow-hidden
+            hover:border-pink-500/40 transition duration-300">
+
+                <div class="absolute inset-0 bg-pink-500/5 opacity-0
+                group-hover:opacity-100 blur-3xl transition duration-300"></div>
+
+                <div class="relative z-10">
+
+                    <!-- Icon -->
+                    <div class="w-16 h-16 rounded-2xl
+                    bg-gradient-to-r from-pink-500 to-purple-600
+                    flex items-center justify-center
+                    shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+
+                        <i class="fa-solid fa-image text-white text-2xl"></i>
+
+                    </div>
+
+                    <!-- Title -->
+                    <h3 data-translate="imageTitle" class="mt-6 text-2xl font-bold text-white">
+                        Screenshot Analysis
+                    </h3>
+
+                    <!-- Description -->
+                    <p data-translate="imageDesc" class="mt-3 text-gray-400 leading-relaxed">
+                        Upload screenshots of suspicious websites,
+                        messages, or emails for AI-powered visual analysis.
+                    </p>
+
+                    <!-- File Upload -->
+                    <label id="uploadBox"
+                    class="flex items-center justify-center w-full mt-6 h-32
+                    rounded-2xl border-2 border-dashed border-white/10
+                    bg-black/20 cursor-pointer hover:border-pink-500/50 transition">
+
+                        <div class="text-center">
+
+                            <i class="fa-solid fa-cloud-arrow-up text-pink-400 text-3xl"></i>
+
+                            <p data-translate="uploadScreenshot" id="uploadText" class="mt-3 text-gray-400">
+                                Upload Screenshot
+                            </p>
+
+                        </div>
+
+                        <input type="file" accept="image/*" class="hidden" id="imageInput">
+
+                    </label>
+
+                    <!-- Button -->
+                    <button
+                    data-translate="analyzeImage"
+                    id="ssanalyzeBtn"
+                    class="w-full mt-5 py-3 rounded-2xl
+                    bg-gradient-to-r from-pink-500 to-purple-600
+                    text-white font-semibold
+                    hover:scale-[1.02] transition duration-300
+                    shadow-[0_0_25px_rgba(236,72,153,0.35)]">
+
+                        Analyze Image
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="resultSection"
+    class="hidden py-20 bg-gradient-to-b from-[#141021] to-[#1a1228]">
+
+        <div class="max-w-5xl mx-auto px-6">
+
+            <div class="text-center mb-12">
+
+                <h2  data-translate="analysisResults" class="text-4xl font-extrabold text-white flex items-center justify-center gap-3">
+
+                    <span class="text-pink-400">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </span>
+
+                    Analysis Results
+
+                </h2>
+
+            </div>
+
+            <!-- Result Card -->
+            <div class="rounded-3xl border border-white/10
+            bg-white/5 backdrop-blur-xl p-8">
+
+                <!-- Top -->
+                <div class="flex items-center gap-5">
+
+                    <!-- Icon -->
+                    <div id="resultIcon"
+                    class="w-16 h-16 rounded-2xl
+                    bg-red-500/20 flex items-center justify-center">
+
+                        <i class="fa-solid fa-triangle-exclamation
+                        text-red-400 text-3xl"></i>
+
+                    </div>
+
+                    <!-- Title -->
+                    <div>
+
+                        <h3 id="analysisType"
+                        class="text-2xl font-bold text-white">
+
+                            URL Analysis
+
+                        </h3>
+
+                        <p id="statusText"
+                        class="text-red-400 mt-1">
+
+                            Threat Detected
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Result Grid -->
+                <div class="grid md:grid-cols-2 gap-6 mt-8">
+
+                    <!-- Result -->
+                    <div class="rounded-2xl border border-white/10
+                    bg-black/20 p-6">
+
+                        <p data-translate="result" class="text-gray-500 text-sm uppercase tracking-wider">
+                            Result
+                        </p>
+
+                        <h4 id="resultValue"
+                        class="mt-3 text-2xl font-bold text-red-400">
+
+                            PHISHING DETECTED
+
+                        </h4>
+
+                    </div>
+
+                    <!-- Confidence -->
+                    <div class="rounded-2xl border border-white/10
+                    bg-black/20 p-6">
+
+                        <p data-translate="confidence" class="text-gray-500 text-sm uppercase tracking-wider">
+                            Confidence
+                        </p>
+
+                        <h4 id="confidenceValue"
+                        class="mt-3 text-2xl font-bold text-red-400">
+
+                            97.3%
+
+                        </h4>
+
+                    </div>
+
+                </div>
+                <!-- Risk Meter -->
+                <div class="mt-8 rounded-2xl border border-white/10
+                bg-black/20 p-6">
+
+                    <div class="flex items-center justify-between">
+
+                        <div>
+                            <h4 data-translate="riskSeverity" class="text-xl font-bold text-white">
+                                Risk Severity
+                            </h4>
+
+                            <p data-translate="estimatedThreat" class="text-gray-400 text-sm mt-1">
+                                Estimated phishing threat level
+                            </p>
+                        </div>
+
+                        <span id="riskLabel"
+                        class="px-4 py-2 rounded-xl
+                        bg-red-500/20 text-red-300
+                        font-semibold text-sm">
+
+                            HIGH RISK
+
+                        </span>
+
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="mt-5">
+
+                        <div class="w-full h-4 rounded-full
+                        bg-white/10 overflow-hidden">
+
+                            <div id="riskBar"
+                            class="h-full rounded-full
+                            bg-gradient-to-r from-green-500 via-yellow-500 to-red-500
+                            transition-all duration-700"
+                            style="width: 85%">
+                            </div>
+
+                        </div>
+
+                        <div class="flex justify-between
+                        text-xs text-gray-400 mt-2">
+
+                            <span data-translate="low">Low</span>
+                            <span data-translate="medium">Medium</span>
+                            <span data-translate="high">High</span>
+                            <span data-translate="critical">Critical</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Detection Reasons -->
+                <div id="reasonsBox"
+                class="mt-8 rounded-2xl border border-white/10
+                bg-black/20 p-6">
+
+                    <h4 data-translate="recommendedActions" class="text-xl font-bold text-white">
+                        Recommended Actions
+                    </h4>
+
+                    <div id="reasonsContainer"
+                    class="flex flex-wrap gap-3 mt-5">
+
+                        <span class="px-4 py-2 rounded-xl
+                        bg-red-500/10 border border-red-500/20
+                        text-red-300 text-sm">
+
+                            Suspicious Domain
+
+                        </span>
+
+                        <span class="px-4 py-2 rounded-xl
+                        bg-red-500/10 border border-red-500/20
+                        text-red-300 text-sm">
+
+                            Fake Login Page
+
+                        </span>
+
+                        <span class="px-4 py-2 rounded-xl
+                        bg-red-500/10 border border-red-500/20
+                        text-red-300 text-sm">
+
+                            Urgent Language Detected
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="py-24 bg-gradient-to-b from-[#03040a] via-[#070711] to-[#0b0613]" id="about">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                <!-- Left Content -->
+                <div>
+
+                    <!-- Small Tag -->
+                    <span data-translate="aboutPhishShield" class="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                    bg-pink-500/10 border border-pink-500/20
+                    text-pink-400 text-sm font-semibold tracking-wide">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+                        About PhishShield AI
+
+                    </span>
+
+                    <!-- Heading -->
+                    <h2 class="mt-6 text-5xl font-extrabold leading-tight text-white">
+
+                        <span data-translate="protectingUsers">
+                            Protecting Users From
+                        </span>
+
+                        <span data-translate="modernPhishingAttacks" class="bg-gradient-to-r from-pink-400 to-purple-500 
+                        bg-clip-text text-transparent">
+                            Modern Phishing Attacks
+                        </span>
+
+                    </h2>
+
+                    <!-- Description -->
+                    <p data-translate="aboutDesc1" class="mt-6 text-lg text-gray-400 leading-relaxed">
+
+                        PhishShield AI is an AI-powered phishing detection platform designed
+                        to identify suspicious URLs, emails, SMS messages, and fake websites
+                        before they can harm users.
+
+                    </p>
+
+                    <p data-translate="aboutDesc2" class="mt-5 text-lg text-gray-400 leading-relaxed">
+
+                        Our intelligent detection engine analyzes cyber threats using
+                        advanced machine learning models and real-time pattern recognition
+                        to provide fast, accurate, and secure protection.
+
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 mt-10">
+
+                        <div class="rounded-2xl border border-white/10
+                        bg-white/5 backdrop-blur-lg p-5 text-center">
+
+                            <h3 class="text-3xl font-bold text-pink-400">
+                                99%
+                            </h3>
+
+                            <p data-translate="detectionAccuracy" class="mt-2 text-sm text-gray-400">
+                                Detection Accuracy
+                            </p>
+
+                        </div>
+
+                        <div class="rounded-2xl border border-white/10
+                        bg-white/5 backdrop-blur-lg p-5 text-center">
+
+                            <h3 class="text-3xl font-bold text-purple-400">
+                                AI
+                            </h3>
+
+                            <p data-translate="threatAnalysis" class="mt-2 text-sm text-gray-400">
+                                Threat Analysis
+                            </p>
+
+                        </div>
+
+                        <div class="rounded-2xl border border-white/10
+                        bg-white/5 backdrop-blur-lg p-5 text-center">
+
+                            <h3 class="text-3xl font-bold text-pink-400">
+                                24/7
+                            </h3>
+
+                            <p data-translate="realTimeSecurity" class="mt-2 text-sm text-gray-400">
+                                Real-Time Security
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="relative">
+
+                    <!-- Glow Effect -->
+                    <div class="absolute inset-0 bg-pink-500/10 blur-3xl rounded-full"></div>
+
+                    <!-- Image Container -->
+                    <div class="relative rounded-3xl overflow-hidden
+                    border border-white/10 bg-white/5 backdrop-blur-lg p-3">
+
+                        <img src="{{ url_for('static', filename='images/img3.png') }}"
+                        alt="Cybersecurity Protection"
+                        class="rounded-2xl w-full object-cover">
+
+                    </div>
+
+                    <!-- Floating Card -->
+                    <div class="absolute -bottom-6 -left-6
+                    rounded-2xl border border-pink-500/20
+                    bg-black/60 backdrop-blur-xl p-5">
+
+                        <div class="flex items-center gap-4">
+
+                            <div class="w-14 h-14 rounded-2xl
+                            bg-gradient-to-r from-pink-500 to-purple-600
+                            flex items-center justify-center">
+
+                                <i class="fa-solid fa-lock text-white text-xl"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h4 data-translate="secureDetection" class="text-white font-bold text-lg">
+                                    Secure Detection
+                                </h4>
+
+                                <p data-translate="secureDetectionDesc" class="text-gray-400 text-sm">
+                                    AI-powered phishing protection
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  </body>
+</html>
