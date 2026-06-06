@@ -56,32 +56,6 @@ The platform combines **Machine Learning**, **Natural Language Processing (NLP)*
 
 ---
 
-## 📸 Project Screenshots
-
-### Home Page 
-
-<img width="1156" height="598" alt="image" src="https://github.com/user-attachments/assets/b01495d5-8940-418b-96d1-c1bc8bf6d006" />
-
-## Scanning page
-
-<img width="1155" height="670" alt="image" src="https://github.com/user-attachments/assets/7a0ab95b-2512-4da2-a938-bedb0da9df08" />
-
-### URL Analysis
-
-<img width="415" height="754" alt="image" src="https://github.com/user-attachments/assets/48fff227-ca63-4293-9311-321b7d0a4783" /> <img width="1279" height="767" alt="image" src="https://github.com/user-attachments/assets/ecaa010a-07a2-434a-b0e2-923d982615a3" />
-
-### Email Analysis
-
-![Email Analysis](screenshots/email_analysis.png)
-
-### SMS Analysis
-
-![SMS Analysis](screenshots/sms_analysis.png)
-
-### Screenshot Analysis
-
-![Screenshot Analysis](screenshots/screenshot_analysis.png)
-
 ## 🧠 Machine Learning Models Used
 
 | Module | Model |
@@ -89,6 +63,14 @@ The platform combines **Machine Learning**, **Natural Language Processing (NLP)*
 | URL Detection | Logistic Regression |
 | Email Detection | Multinomial Naive Bayes |
 | SMS Detection | Multinomial Naive Bayes |
+
+## 📊 Model Performance
+
+| Module | Accuracy |
+|----------|----------|
+| URL Detection | 96% |
+| Email Detection | 92% |
+| SMS Detection | 97% |
 
 ### NLP Techniques Used
 - Tokenization
@@ -294,7 +276,6 @@ Output:
 ## 🎯 Future Improvements
 
 - Deep Learning based phishing detection
-- BERT for advanced NLP analysis
 - Real-time threat intelligence API integration
 - Multi-language phishing detection
 - Dashboard for analytics
@@ -303,20 +284,34 @@ Output:
 
 ---
 
-## 📸 Screenshots
+## 📸 Project Screenshots
 
-Add project screenshots here.
+### Home Page 
 
-```md
-![Home Page](images/home.png)
-![Detection Result](images/result.png)
-```
+<img width="1156" height="598" alt="image" src="https://github.com/user-attachments/assets/b01495d5-8940-418b-96d1-c1bc8bf6d006" />
+
+## Scanning page
+
+<img width="1155" height="670" alt="image" src="https://github.com/user-attachments/assets/7a0ab95b-2512-4da2-a938-bedb0da9df08" />
+
+### URL Analysis
+
+<img width="415" height="754" alt="image" src="https://github.com/user-attachments/assets/48fff227-ca63-4293-9311-321b7d0a4783" /> <img width="1279" height="767" alt="image" src="https://github.com/user-attachments/assets/ecaa010a-07a2-434a-b0e2-923d982615a3" />
+
+## Chrome Browser Extension
+
+<img width="940" height="366" alt="image" src="https://github.com/user-attachments/assets/709c152a-0bbf-4433-a861-6900e8d65f25" />
+
 
 ---
 
 ## 🤝 Contributors
 
-- 
+- Aliva Indu (https://github.com/AlivaIndu)
+- Aashutosh Kumar Singh (https://github.com/aashutoshkumarsingh)
+- Ananya Shreya (https://github.com/ananyashreya21)
+- Raj Kamal (https://github.com/Rajkamal007264)
+- Akshay Kashyap (https://github.com/akshaykashyap3010)
 
 ---
 
