@@ -58,15 +58,17 @@ The platform combines **Machine Learning**, **Natural Language Processing (NLP)*
 
 ## 📸 Project Screenshots
 
-### Home Page
+### Home Page 
 
 <img width="1156" height="598" alt="image" src="https://github.com/user-attachments/assets/b01495d5-8940-418b-96d1-c1bc8bf6d006" />
 
-![Home Page](screenshots/homepage.png)
+## Scanning page
+
+<img width="1155" height="670" alt="image" src="https://github.com/user-attachments/assets/7a0ab95b-2512-4da2-a938-bedb0da9df08" />
 
 ### URL Analysis
 
-![URL Analysis](screenshots/url_scan.png)
+<img width="415" height="754" alt="image" src="https://github.com/user-attachments/assets/48fff227-ca63-4293-9311-321b7d0a4783" /> <img width="1279" height="767" alt="image" src="https://github.com/user-attachments/assets/ecaa010a-07a2-434a-b0e2-923d982615a3" />
 
 ### Email Analysis
 
